@@ -3,6 +3,16 @@
 This project aims to generate GQL (Graph Query Language) queries using a combination of **LoRA fine-tuning** and **in-context learning** techniques. It enhances the performance of pre-trained models on specific tasks by integrating an innovative error-correction mechanism, leveraging syntax detection modules to ensure that the generated queries comply with GQL syntax. This README provides detailed instructions on how to set up and run the project.
 
 ---
+## Visualizations
+### Model Structure
+The diagram below illustrates the structure of our model, showcasing how LoRA fine-tuning, in-context learning, and the syntax detection module are integrated to generate accurate GQL queries.
+
+![Model Structure](temp/structure.png)
+
+### Preliminary Round Results
+The following graph highlights our performance in the preliminary round, where our innovative approach and error-correction mechanisms secured a competitive ranking.
+
+![Preliminary Round Results](temp/rank.png)
 
 ## Instructions
 
