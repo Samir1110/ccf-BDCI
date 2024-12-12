@@ -12,7 +12,7 @@ The diagram below illustrates the structure of our model, showcasing how LoRA fi
 ### Preliminary Round Results
 The following graph highlights our performance in the preliminary round, where our innovative approach and error-correction mechanisms secured a competitive ranking.
 
-![Preliminary Round Results](temp/rank.png)
+<img src="temp/rank.png" alt="Preliminary Round Results" width="50%">
 
 ## Instructions
 
