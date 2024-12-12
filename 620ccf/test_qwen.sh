@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=0 llamafactory-cli train \
+    --stage sft \
+    --do_predict \
+    --model_name_or_path Qwen2___5-Coder-32B-Instruct \
+    --adapter_name_or_path /share/home/tanmingkui_yangyifan/code/3dgs/sjz/submit/620ccf/saves/train_qwen_32b/step270/checkpoint-270  \
+    --eval_dataset adgen_local_test \
+    --dataset_dir ./data \
+    --template qwen \
+    --finetuning_type lora \
+    --output_dir ./predict/test_qwen_32b/step270 \
+    --overwrite_cache \
+    --overwrite_output_dir \
+    --cutoff_len 1024 \
+    --preprocessing_num_workers 16 \
+    --per_device_eval_batch_size 1 \
+    --max_samples 2000 \
+    --predict_with_generate \

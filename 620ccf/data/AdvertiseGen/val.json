@@ -1,0 +1,702 @@
+[
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 与Laurence Fishburne有关的电影有哪些？",
+        "output": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie) RETURN movie.title",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Carrie-Anne Moss与哪些不同的节点存在关系？",
+        "output": "MATCH (n {name: 'Carrie-Anne Moss'})-[r]-(relatedNode) RETURN DISTINCT relatedNode",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne出演或参与的电影（仅限电影节点）有哪些？",
+        "output": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in|:directed]->(movie) RETURN movie",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人中有哪些不同的出生年份？",
+        "output": "MATCH (n) WHERE n:person RETURN DISTINCT n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 怎么查询Carrie-Anne Moss的出生年份？",
+        "output": "MATCH (n {name: 'Carrie-Anne Moss'}) RETURN n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne与电影之间的关系类型有哪些？",
+        "output": "MATCH (n {name: 'Laurence Fishburne'})-[r]->(movie) RETURN DISTINCT type(r)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询所有电影的标题。",
+        "output": "MATCH (m:movie) RETURN m.title",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 出演《黑客帝国》的演员有哪些？",
+        "output": "MATCH (matrix:movie {title: 'The Matrix'})<-[:acted_in]-(actor) RETURN actor.name",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询在《黑客帝国》中，演员们分别扮演了什么角色？",
+        "output": "MATCH (m:movie {title: 'The Matrix'})<-[r:acted_in]-(a:person) RETURN a.name, r.role",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询哪些人出演或执导了《黑客帝国》？",
+        "output": "MATCH (matrix {title: 'The Matrix'})<-[:acted_in|:directed]-(person) RETURN person.name",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询Laurence Fishburne出演的电影有哪些？这些电影的导演都是谁？",
+        "output": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie)<-[:directed]-(director) RETURN movie.title, director.name",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的名字和出生年份是什么？",
+        "output": "MATCH (n) WHERE n:person RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 出生于2000年之后的人有哪些，他们的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE n.born > 2000 RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 有Trinity这个角色的电影有哪些？",
+        "output": "MATCH (n)-[k:acted_in]->(f) WHERE k.role = \"Trinity\" RETURN f.title",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 有哪些人有出生年份的记录？他们的名字和出生年份是多少？",
+        "output": "MATCH (n:person) WHERE exists(n.born) RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字以'Pet'开头的人有哪些，他们的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE n.name STARTS WITH 'Pet' RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字以'ter'结尾的人有哪些，他们的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE n.name ENDS WITH 'ter' RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字中包含'ete'的人有哪些，他们的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE n.name CONTAINS 'ete' RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字不以's'结尾的人有哪些，他们的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE NOT n.name ENDS WITH 's' RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne与其他节点的关系类型以'ac'开头的有哪些？他在这些关系中扮演了什么角色",
+        "output": "MATCH (n)-[r]->() WHERE n.name='Laurence Fishburne' AND type(r) STARTS WITH 'ac' RETURN type(r), r.role",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 唯一标识为\"0_3937_0_0_0\"的关系是什么？",
+        "output": "MATCH ()-[r]->() WHERE euid(r) = \"0_3937_0_0_0\" RETURN r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; ID为0的节点是什么？",
+        "output": "MATCH (n) WHERE id(n)= 0 RETURN n",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 唯一标识为\"0_3937_0_0_0\"的关系是什么？",
+        "output": "MATCH ()-[r]->() WHERE euid(r) = \"0_3937_0_0_0\" RETURN r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; ID为0、3或5的节点是什么？",
+        "output": "MATCH (n) WHERE id(n) IN [0, 3, 5] RETURN n",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne或Tobias的出生年份是多少？",
+        "output": "MATCH (n:person) WHERE n.name IN ['Laurence Fishburne', 'Tobias'] RETURN n.name, n.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 带白色腰带的人有哪些？他们的名字、年龄和腰带颜色分别是什么？",
+        "output": "MATCH (n) WHERE n.belt = 'white' RETURN n.name, n.age, n.belt",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字是Peter但没有腰带的人是谁？他们的年龄是多少？",
+        "output": "MATCH (person) WHERE person.name = 'Peter' AND person.belt IS NULL RETURN person.name, person.age, person.belt",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 名字在Andres和Tobias之间的人有哪些？他们的出生年份是多少？",
+        "output": "MATCH (a) WHERE a.name > 'Andres' AND a.name < 'Tobias' RETURN a.name, a.born",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 跳过前3个人，返回后面的人的名字是什么？",
+        "output": "MATCH (n:person) RETURN n.name ORDER BY n.name SKIP 3",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 前3个人的名字是什么？",
+        "output": "MATCH (n:person) RETURN n.name ORDER BY n.name LIMIT 3",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询人节点Jada Pinkett Smith和电影《黑客帝国》，创建这两个节点之前的write关系。",
+        "output": "MATCH (person {name: 'Jada Pinkett Smith'}), (movie {title: 'The Matrix'}) CREATE (person)-[:write]->(movie) RETURN person, movie",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 如何创建Jada Pinkett Smith与《黑客帝国》中扮演Trinity的\"acted_in\"关系？",
+        "output": "MATCH (person {name: 'Jada Pinkett Smith'}), (movie {title: 'The Matrix'}) CREATE (person)-[:acted_in {role: 'Trinity'}]->(movie) RETURN person, movie",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 返回所有节点的ID是什么？",
+        "output": "MATCH (n) RETURN id(n)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne与其他具有出边关系的节点的关系类型有哪些？",
+        "output": "MATCH (n)-[r]->() WHERE n.name = 'Laurence Fishburne' RETURN type(r)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的平均出生年份是多少？",
+        "output": "MATCH (n:person) RETURN avg(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人中最晚的出生年份是多少？",
+        "output": "MATCH (n:person) RETURN max(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人中最早的出生年份是多少？",
+        "output": "MATCH (n:person) RETURN min(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份是什么（以集合形式返回）？",
+        "output": "MATCH (n:person) RETURN collect(DISTINCT n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份的总体标准差是多少？",
+        "output": "MATCH (n:person) RETURN stddev_pop(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份的样本标准差是多少？",
+        "output": "MATCH (n:person) RETURN stddev(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份的样本方差是多少？",
+        "output": "MATCH (n:person) RETURN variance(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份的总体方差是多少？",
+        "output": "MATCH (n:person) RETURN var_pop(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 所有人的出生年份的总和是多少？",
+        "output": "MATCH (n:person) RETURN sum(n.born)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; Laurence Fishburne的标签是什么？他出生年份是多少？他与其他节点的关系总数是多少？",
+        "output": "MATCH (n {name: 'Laurence Fishburne'})-[]->(x) RETURN labels(n), n.born, count(*)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查找Laurence Fishburne，返回其标签、出生年份和他与其他节点的关系总数。",
+        "output": "MATCH (n {name: 'Laurence Fishburne'})-[]->(x) RETURN labels(n), n.born, count(*)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询ID为0、2和3的节点，创建0在2中出演角色为\"testaha\"，0与3结婚的关系，返回新建的关系。",
+        "output": "MATCH (a), (b), (c) WHERE id(a) = 0 AND id(b) = 2 AND id(c) = 3 CREATE (a)-[r1:ACTED_IN {charactername: 'testaha'}]->(b), (a)-[r2:MARRIED]->(c) RETURN r1, r2",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查找节点ID为4的节点的出边的唯一标识符",
+        "output": "MATCH (n) WHERE id(n) = 4 MATCH (n)-[r]->() RETURN id(r)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 返回所有节点及其各自的属性信息",
+        "output": "MATCH (n) RETURN n",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询并更新所有权重为40的KNOWS关系r其新的权重为原权重加1",
+        "output": "MATCH ()-[r:KNOWS {weight: 40}]->() SET r.weight = r.weight + 1 RETURN r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找到F认识I这条关系并将其删除",
+        "output": "MATCH (f:Person {name: 'F'})-[r:KNOWS]->(i:Person {name: 'I'}) DELETE r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找出名为'A'的人和名为'C'的人之间存在的关系并进行删除操作",
+        "output": "MATCH (a:Person {name: 'A'})-[r]-(c:Person {name: 'C'}) DELETE r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 删除名为A的Person节点",
+        "output": "MATCH (a:Person {name: 'A'}) DETACH DELETE a RETURN a",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找名为B的人然后删除这些信息",
+        "output": "MATCH (b:Person {name: 'B'}) DETACH DELETE b",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 添加一个名字叫Caocao的人节点，并设置其出生年份为155年，性别为1",
+        "output": "CREATE (p:Person {name: 'Caocao', birthyear: 155, gender: 1}) RETURN p",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建一个名为Sunquan的Person节点，其出生年份为182年，性别为1",
+        "output": "CREATE (p:Person {name: 'Sunquan', birthyear: 182, gender: 1}) RETURN p",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 添加一个名字叫Guanyu的人节点，并设置其出生年份为160年，性别为1",
+        "output": "CREATE (p:Person {name: 'Guanyu', birthyear: 160, gender: 1}) RETURN p",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建一个名为Zhangfei的人节点，其出生年份为153年，性别为1",
+        "output": "CREATE (p:Person {name: 'Zhangfei', birthyear: 153, gender: 1}) RETURN p",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建节点北京，包含名称北京、面积16410.54平方公里和人口2154.2万的属性信息",
+        "output": "CREATE (c:City {name: '北京', area: 16410.54, population: 21542000}) RETURN c",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建或更新名为Liubei的Person节点，其中性别为1，如果存在则确保出生年份为2020；返回名字、性别和出生年份信息。",
+        "output": "MERGE (p:Person {name: 'Liubei'}) ON CREATE SET p.gender = 1 ON MATCH SET p.birthyear = 2020 RETURN p.name, p.gender, p.birthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 如果存在名为Liubei的Person节点，将其性别属性设为0，出生年份属性设为2050，并返回这个人的名字性别及出生年份。",
+        "output": "MATCH (p:Person {name: 'Liubei'}) SET p.gender = 0, p.birthyear = 2050 RETURN p.name, p.gender, p.birthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 合并创建或匹配一个名为Huatuo的人节点并返回这个人的名字",
+        "output": "MERGE (p:Person {name: 'Huatuo'}) RETURN p.name",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查找或创建名为'Liubei'的Person节点，然后返回这个人的出生年份和性别信息",
+        "output": "MERGE (p:Person {name: 'Liubei'}) RETURN p.birthyear, p.gender",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 合并创建或更新名为'zhangsan'的人员节点，并设置其出生年份为2020，返回该出生年份。",
+        "output": "MERGE (p:Person {name: 'zhangsan'}) SET p.birthyear = 2020 RETURN p.birthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 合并或创建名为'zhangsan'的人员节点，创建名为'xiaoming'的人员节点，最后返回这个创建的'xiaoming'节点。",
+        "output": "MERGE (p:Person {name: 'zhangsan'}) CREATE (x:Person {name: 'xiaoming'}) RETURN x",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建或更新名为'zhangsan'和'lisi'的两个人节点并返回它们",
+        "output": "MERGE (p1:Person {name: 'zhangsan'}) MERGE (p2:Person {name: 'lisi'}) RETURN p1, p2",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查找名字为张三的人员，更新其出生年份为2023，并通过合并操作确保名字为王五的人员存在，最后返回王五的信息。",
+        "output": "MATCH (p:Person {name: '张三'}) SET p.birthyear = 2023 MERGE (w:Person {name: '王五'}) RETURN w",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 移除名为Liam Neeson的节点的名称属性，返回其原有的名字和出生年份信息",
+        "output": "MATCH (p:Person {name: 'Liam Neeson'}) WITH p.name AS oldName, p.birthyear AS birthyear REMOVE p.name RETURN oldName, birthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询所有不同的电影标题并按字母顺序排列",
+        "output": "MATCH (m:Film) RETURN DISTINCT m.title ORDER BY m.title",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找出所有不同的电影标题并按字母顺序排列返回前三个",
+        "output": "MATCH (m:Film) RETURN DISTINCT m.title ORDER BY m.title LIMIT 3",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询与Vanessa Redgrave通过两条路径相关联的所有不同人物，返回这些人物的名字，并且按照名字排序，在结果中跳过前两个记录后显示接下来的三个名字。",
+        "output": "MATCH (v:Person {name: 'Vanessa Redgrave'})-[*2]-(n:Person) RETURN DISTINCT n.name ORDER BY n.name SKIP 2 LIMIT 3",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 创建连接Lindsay Lohan和The Parent Trap的关系，其中Lindsay Lohan是这部电影的导演。",
+        "output": "MATCH (p:Person {name: 'Lindsay Lohan'}), (m:Film {title: 'The Parent Trap'}) CREATE (p)-[:DIRECTED]->(m) RETURN p, m",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询与最多演员或导演合作过的三部电影是什么？展示电影名称及合作的人员名字，按合作人员数量降序排列并仅显示前三部电影的结果",
+        "output": "MATCH (m:Film)<-[:ACTED_IN|DIRECTED]-(p:Person) WITH m, collect(p.name) AS collaborators, count(p) AS numCollaborators ORDER BY numCollaborators DESC LIMIT 3 RETURN m.title, collaborators",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询Person节点中有多少个年龄属性",
+        "output": "MATCH (p:Person) WHERE exists(p.birthyear) RETURN count(p) AS numPersonsWithBirthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 计算有多少人是13岁或者年龄超过了40岁的？",
+        "output": "MATCH (p:Person) WHERE (2024 - p.birthyear) = 13 OR (2024 - p.birthyear) > 40 RETURN count(p) AS countPeople",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询所有不是自身指向自己的关系,并返回这些关系关联的两个不同节点",
+        "output": "MATCH (a)-[r]->(b) WHERE a <> b RETURN a, b, r",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询图中共有多少条关系",
+        "output": "MATCH ()-[r]->() RETURN count(r) AS total_relationships",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询所有MARRIED关系的数量并返回结果",
+        "output": "MATCH ()-[r:MARRIED]->() RETURN count(r) AS married_relationship_count",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询与任意电影相关联的关系总数是多少",
+        "output": "MATCH (m:Film)-[r]-() RETURN count(r) AS relationships_with_films",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询人与电影之间存在的关系总数",
+        "output": "MATCH (p:Person)-[r]-(m:Film) RETURN count(r) AS person_film_relationship_count",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询所有存在的MARRIED关系并计算数量",
+        "output": "MATCH ()-[r:MARRIED]->() RETURN count(r) AS married_relationship_count",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 计算所有MARRIED和BORN_IN关系的数量",
+        "output": "MATCH ()-[r:MARRIED|BORN_IN]->() RETURN count(r) AS married_born_in_relationship_count",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找出所有城市的名字然后把结果和列表[1,2]合并起来",
+        "output": "MATCH (c:City) WITH collect(c.name) AS city_names, [1, 2] AS numbers RETURN city_names + numbers AS combined_list",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 计算所有Person节点的出生年份总和然后取相反数",
+        "output": "MATCH (p:Person) WHERE exists(p.birthyear) RETURN -sum(p.birthyear) AS negative_sum_birthyear",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 找出所有边的唯一标识符返回",
+        "output": "MATCH ()-[r]->() RETURN id(r) AS relationship_id",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: yago; 查询节点ID等于4的节点所关联的所有边的边UID。",
+        "output": "MATCH (n) WHERE id(n) = 4 MATCH (n)-[r]->() RETURN id(r) AS relationship_id",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 获得名字是Carrie-Anne Moss的节点的信息。",
+        "output": "MATCH (n {name: 'Carrie-Anne Moss'}) RETURN n",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 从数据库中查找出生于1967年或名字是Meg Ryan的人。",
+        "output": "MATCH (n {born: 1967}),(nm {name: \"Meg Ryan\"}) RETURN n",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 从数据库中查找与Laurence Fishburne有关的电影。",
+        "output": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie) RETURN movie.title",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 在图中查找Laurence Fishburne出演或参与的电影（仅限电影节点）。",
+        "output": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in|:directed]->(movie) RETURN movie",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查询Laurence Fishburne与电影之间的关系类型。",
+        "output": "MATCH (n)-[r]->() WHERE n.name = 'Laurence Fishburne' RETURN type(r)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 在图中查找前3个人的名字。",
+        "output": "MATCH (n:person) RETURN n.name ORDER BY n.name LIMIT 3",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 获得返回所有节点的ID。",
+        "output": "MATCH (n) RETURN id(n)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查找图数据库中Laurence Fishburne与其他具有出边关系的节点的关系类型。",
+        "output": "MATCH (n)-[r]->() WHERE n.name = 'Laurence Fishburne' RETURN type(r)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查找数据库中Laurence Fishburne的标签。他出生年份是多少？他与其他节点的关系总数是多少？",
+        "output": "MATCH (n {name: 'Laurence Fishburne'})-[]->(x) RETURN labels(n), n.born, count(*)",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查找图数据库中返回第一个节点的键。",
+        "output": "MATCH (n) RETURN keys(n) LIMIT 1",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 找到返回第一个节点的标签。",
+        "output": "MATCH (n) RETURN labels(n) LIMIT 1",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 从数据库中查找['John', 'Mark', 'Jonathan', 'Bill']名字列表中，名字以\"Jo\"开头的人。",
+        "output": "WITH ['John', 'Mark', 'Jonathan', 'Bill'] AS somenames UNWIND somenames AS names WITH names AS candidate WHERE candidate STARTS WITH 'Jo' RETURN candidate",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 在图中查找在由[2, 4, 7, 9, 12]组成的数字列表中，数字等于4或大于6且小于10的数字。",
+        "output": "WITH [2, 4, 7, 9, 12] AS numbers RETURN [n IN numbers WHERE n = 4 OR (n > 6 AND n < 10)] AS result",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 找到列表 [2, 3, 4, 5]中包含2、3或8的数字。",
+        "output": "WITH [2, 3, 4, 5] AS numbers RETURN [n IN numbers WHERE n IN [2, 3, 8]] AS result",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译机器,根据以下输入问题(input),你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将自然语言描述转化为对应的Cypher查询语句,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "db_id: common; 查找图数据库中两个列表相加的结果。",
+        "output": "RETURN [1,2,3,4,5]+[6,7] AS myList",
+        "history": [],
+        "system": "你是一个自然语言至图查询语言翻译机器"
+    }
+]

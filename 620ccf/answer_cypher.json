@@ -1,0 +1,402 @@
+[
+    {
+        "index": "0",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'})-[r:acted_in]->(movie) RETURN movie.title, r.role"
+    },
+    {
+        "index": "1",
+        "answer": "MATCH (a:person {name: 'Carrie-Anne Moss'})-[e]-(neighbor:person) WHERE a <> neighbor RETURN neighbor,name(e) ORDER BY a.name,e.name"
+    },
+    {
+        "index": "2",
+        "answer": "MATCH (n:movie)<-[r:acted_in]-(a:person {name: 'Laurence Fishburne'}) RETURN n"
+    },
+    {
+        "index": "3",
+        "answer": "MATCH (n) WHERE n:person RETURN DISTINCT n.born"
+    },
+    {
+        "index": "4",
+        "answer": "MATCH (nm {name: 'Carrie-Anne Moss'}) RETURN nm.born"
+    },
+    {
+        "index": "5",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'})-[r]-(movie) RETURN type(r)"
+    },
+    {
+        "index": "6",
+        "answer": "MATCH (n:movie) RETURN n.title"
+    },
+    {
+        "index": "7",
+        "answer": "MATCH (matrix:movie {title: 'The Matrix'})<-[:acted_in]-(actor) RETURN actor.name"
+    },
+    {
+        "index": "8",
+        "answer": "MATCH (matrix:movie {title: 'The Matrix'})<-[:acted_in]-(actor) RETURN actor.name, actor.role"
+    },
+    {
+        "index": "9",
+        "answer": "MATCH (matrix:movie {title: 'The Matrix'})<-[:acted_in]-(actor:person)<-[:directed]-(director:person) RETURN actor.name, director.name"
+    },
+    {
+        "index": "10",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie)<-[:directed]-(director) RETURN movie.title, director.name"
+    },
+    {
+        "index": "11",
+        "answer": "MATCH (n) WHERE n:person RETURN n.name, n.born"
+    },
+    {
+        "index": "12",
+        "answer": "MATCH (n) WHERE n.born > 2000 RETURN n.name, n.born"
+    },
+    {
+        "index": "13",
+        "answer": "MATCH (n)-[k:acted_in]->(f) WHERE k.role = \"Trinity\" RETURN f.title"
+    },
+    {
+        "index": "14",
+        "answer": "MATCH (n) WHERE n.born IS NOT NULL RETURN n.name, n.born"
+    },
+    {
+        "index": "15",
+        "answer": "MATCH (n) WHERE n.name STARTS WITH 'Pet' RETURN n.name, n.born"
+    },
+    {
+        "index": "16",
+        "answer": "MATCH (n) WHERE n.name ENDs WITH 'ter' RETURN n.name, n.born"
+    },
+    {
+        "index": "17",
+        "answer": "MATCH (n) WHERE name(n) CONTAINS 'ete' RETURN n.name, n.born"
+    },
+    {
+        "index": "18",
+        "answer": "MATCH (n) WHERE n.name NOT END WITH's' RETURN n.name, n.born"
+    },
+    {
+        "index": "19",
+        "answer": "MATCH (laurence:person {name: 'Laurence Fishburne'})-[r]->() WHERE r.type STARTS WITH 'ac' RETURN type(r), r.role"
+    },
+    {
+        "index": "20",
+        "answer": "MATCH ()-[r]->() WHERE euid(r) = \"0_3937_0_0_0\" RETURN type(r)"
+    },
+    {
+        "index": "21",
+        "answer": "MATCH (n) WHERE id(n)= 0 RETURN n"
+    },
+    {
+        "index": "22",
+        "answer": "MATCH ()-[r]->() WHERE euid(r) = \"0_3937_0_0_0\" RETURN type(r)"
+    },
+    {
+        "index": "23",
+        "answer": "MATCH (n) WHERE id(n) IN [0, 3, 5] RETURN n"
+    },
+    {
+        "index": "24",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'}) RETURN laurence.born, n.born"
+    },
+    {
+        "index": "25",
+        "answer": "MATCH (n) WHERE n.belt = 'white' RETURN n.name, n.age, n.belt"
+    },
+    {
+        "index": "26",
+        "answer": "MATCH (person) WHERE person.name = 'Peter' AND person.belt IS NULL RETURN person.name, person.age, person.belt"
+    },
+    {
+        "index": "27",
+        "answer": "MATCH (a) WHERE a.name > 'Andres' AND a.name < 'Tobias' RETURN a.name, a.born"
+    },
+    {
+        "index": "28",
+        "answer": "MATCH (n:person) RETURN n.name ORDER BY n.name SKIP 3"
+    },
+    {
+        "index": "29",
+        "answer": "MATCH (n) RETURN n.name LIMIT 3"
+    },
+    {
+        "index": "30",
+        "answer": "MATCH (j:person {name: 'Jada Pinkett Smith'}) WITH j MATCH (matrix:movie {title: 'The Matrix'}) WITH j, matrix CREATE (j)-[k:write]->(matrix) RETURN j,k,matrix"
+    },
+    {
+        "index": "31",
+        "answer": "CREATE (matrix:movie {title: 'The Matrix', tagline: 'You take the blue pill'})-[:acted_in]->(trinity:person {name: 'Trinity'}) CREATE (jada:person {name: 'Jada Pinkett Smith'}) CREATE (jada)-[r:acted_in {role: 'Trinity'}]->(matrix)"
+    },
+    {
+        "index": "32",
+        "answer": "MATCH (n) RETURN n.id"
+    },
+    {
+        "index": "33",
+        "answer": "MATCH (laurence:person{name:\"Laurence Fishburne\"})-[r]->(neighbor:person) RETURN type(r)"
+    },
+    {
+        "index": "34",
+        "answer": "MATCH (n) WHERE n:person RETURN avg(n.born)"
+    },
+    {
+        "index": "35",
+        "answer": "MATCH (n) WHERE n:person RETURN DISTINCT n.born ORDER BY n.born DESC LIMIT 1"
+    },
+    {
+        "index": "36",
+        "answer": "MATCH (n) WHERE n:person RETURN DISTINCT n.born ORDER BY n.born LIMIT 1"
+    },
+    {
+        "index": "37",
+        "answer": "MATCH (n) WHERE n:person RETURN n.born"
+    },
+    {
+        "index": "38",
+        "answer": "MATCH (n) WHERE n:person RETURN round(stddev(n.born)) AS stddev"
+    },
+    {
+        "index": "39",
+        "answer": "MATCH (n) WHERE n:person RETURN round(stddev(n.born)) AS stddev"
+    },
+    {
+        "index": "40",
+        "answer": "MATCH (n) WHERE n:person RETURN round(stddev(n.born)) AS stddev"
+    },
+    {
+        "index": "41",
+        "answer": "MATCH (n) WHERE n:person RETURN round(stddev(n.born)) AS stddev"
+    },
+    {
+        "index": "42",
+        "answer": "MATCH (n) WHERE n:person RETURN sum(n.born)"
+    },
+    {
+        "index": "43",
+        "answer": "MATCH (n) WHERE n.name = 'Laurence Fishburne' RETURN n.tag, n.born, count(n)-[r:knows]-(m)"
+    },
+    {
+        "index": "44",
+        "answer": "MATCH (n) WHERE n.name = 'Laurence Fishburne' RETURN n.name, n.born, count(n)-[e]-(n)"
+    },
+    {
+        "index": "45",
+        "answer": "MATCH (n:id {id: 0}) WITH n MATCH (m:id {id: 2}) RETURN n,m CREATE (n)-[r:acted_in {role: \"testaha\"}]->(m) MATCH (n:id {id: 0}) MATCH (n2:id {id: 3}) RETURN n,n2"
+    },
+    {
+        "index": "46",
+        "answer": "MATCH (n) WHERE id(n)= 4 RETURN n.name, n.edge.ids"
+    },
+    {
+        "index": "47",
+        "answer": "MATCH (n) RETURN n"
+    },
+    {
+        "index": "48",
+        "answer": "MATCH (r:KNOWS{weight: 40}) SET r.weight = r.weight + 1"
+    },
+    {
+        "index": "49",
+        "answer": "MATCH (f:person {name: 'F'})-[e:know]->(i:person {name: 'I'}) DELETE e"
+    },
+    {
+        "index": "50",
+        "answer": "MATCH (a:person{name:\"A\"})-[e]-(c:person{name:\"C\"}) DELETE e"
+    },
+    {
+        "index": "51",
+        "answer": "MATCH (n:Person {name: 'A'}) DELETE n"
+    },
+    {
+        "index": "52",
+        "answer": "MATCH (n) WHERE n.name = \"B\" DELETE n"
+    },
+    {
+        "index": "53",
+        "answer": "CREATE (a:person {name: 'Caocao', born: 155, gender: 1})"
+    },
+    {
+        "index": "54",
+        "answer": "CREATE (p:Person {name: 'Sunquan', born: 182, gender: 1})"
+    },
+    {
+        "index": "55",
+        "answer": "CREATE (a:person {name: 'Guanyu', born: 160, gender: 1})"
+    },
+    {
+        "index": "56",
+        "answer": "CREATE (a:person {name: 'Zhangfei', born: 153, gender: 1})"
+    },
+    {
+        "index": "57",
+        "answer": "CREATE (a:city {name: '北京', area: 16410.54, population: 2154.2e6})"
+    },
+    {
+        "index": "58",
+        "answer": "CREATE (n:Person {name: 'Liubei', gender: 1, born: 2020}) RETURN n.name, n.gender, n.born"
+    },
+    {
+        "index": "59",
+        "answer": "MATCH (p:Person{name:\"Liubei\"}) SET p.gender = 0, p.born = 2050 RETURN p.name, p.gender, p.born"
+    },
+    {
+        "index": "60",
+        "answer": "MATCH (n:person{name:\"Huatuo\"}) RETURN n.name"
+    },
+    {
+        "index": "61",
+        "answer": "MATCH (p:Person{name:\"Liubei\"}) RETURN p.born, p.gender ELSE CREATE (p:Person{name:\"Liubei\",born:\"2000\",gender:\"male\"}) RETURN p.born, p.gender"
+    },
+    {
+        "index": "62",
+        "answer": "CREATE (person:person{name:\"zhangsan\"}) SET person.born = 2020 RETURN person.born"
+    },
+    {
+        "index": "63",
+        "answer": "CREATE (a:person{name:\"zhangsan\"}) MERGE (b:person{name:\"xiaoming\"}) RETURN b"
+    },
+    {
+        "index": "64",
+        "answer": "CREATE (a:person {name: 'zhangsan'}) RETURN a CREATE (b:person {name: 'lisi'}) RETURN b"
+    },
+    {
+        "index": "65",
+        "answer": "MATCH (a:person{name:\"张三\"}) SET a.born = 2023 MERGE (b:person{name:\"王五\"}) RETURN b"
+    },
+    {
+        "index": "66",
+        "answer": "MATCH (n {name: 'Liam Neeson'}) SET n.name = NULL RETURN n.name, n.born"
+    },
+    {
+        "index": "67",
+        "answer": "MATCH (n:movie) RETURN DISTINCT n.title ORDER BY n.title"
+    },
+    {
+        "index": "68",
+        "answer": "MATCH (n:movie) RETURN DISTINCT n.title ORDER BY n.title LIMIT 3"
+    },
+    {
+        "index": "69",
+        "answer": "MATCH (u:person {name: 'Vanessa Redgrave'})-[e1:acted_in]->(m:movie)<-[e2:acted_in]-(v:person) WHERE e1.year > 1980 AND e2.year < 2010 RETURN v.name ORDER BY v.name SKIP 2 LIMIT 3"
+    },
+    {
+        "index": "70",
+        "answer": "MATCH (lohan:person {name: 'Lindsay Lohan'}) MATCH (movie:movie {title: 'The Parent Trap'}) CREATE (lohan)-[:directed]->(movie)"
+    },
+    {
+        "index": "71",
+        "answer": "MATCH (n:person) WITH n, size((n)-[:acted_in|directed]->(m:movie)) AS num ORDER BY num DESC RETURN n.name, movie.title, num LIMIT 3"
+    },
+    {
+        "index": "72",
+        "answer": "MATCH (n:Person) WHERE n.age IS NOT NULL RETURN COUNT(n)"
+    },
+    {
+        "index": "73",
+        "answer": "MATCH (n) WHERE n.age >= 13 OR n.age > 40 RETURN COUNT(n)"
+    },
+    {
+        "index": "74",
+        "answer": "MATCH (a)-[r]->(b) WHERE a <> b AND a <> a RETURN a,b,r"
+    },
+    {
+        "index": "75",
+        "answer": "MATCH (n)-[e]-(m) RETURN count(e)"
+    },
+    {
+        "index": "76",
+        "answer": "MATCH (n)-[e:MARRIED]-(m) RETURN count(e)"
+    },
+    {
+        "index": "77",
+        "answer": "MATCH (n:movie) WITH count(n) as num RETURN num"
+    },
+    {
+        "index": "78",
+        "answer": "MATCH (n:person)-[e]-(m:movie) RETURN count(e)"
+    },
+    {
+        "index": "79",
+        "answer": "MATCH (a)-[r:MARRIED]-(b) RETURN COUNT(r)"
+    },
+    {
+        "index": "80",
+        "answer": "MATCH (n)-[r:MARRIED]-(m) WHERE n.name IS NOT NULL AND m.name IS NOT NULL MATCH (n)-[r:BORN_IN]-(m) WHERE n.name IS NOT NULL AND m.name IS NOT NULL RETURN COUNT(r)"
+    },
+    {
+        "index": "81",
+        "answer": "MATCH (n:city) RETURN n.name AS name UNION ALL WITH ['1','2'] AS x RETURN x"
+    },
+    {
+        "index": "82",
+        "answer": "MATCH (n:Person) RETURN sum(n.born) * -1"
+    },
+    {
+        "index": "83",
+        "answer": "MATCH (n)-[e]->(m) RETURN e.id"
+    },
+    {
+        "index": "84",
+        "answer": "MATCH (n)-[e]-(m) WHERE id(n)= 4 RETURN e.uid"
+    },
+    {
+        "index": "85",
+        "answer": "MATCH (n {name: 'Carrie-Anne Moss'}) RETURN n"
+    },
+    {
+        "index": "86",
+        "answer": "MATCH (n {born: 1967}),(nm {name: \"Meg Ryan\"}) RETURN n"
+    },
+    {
+        "index": "87",
+        "answer": "MATCH (n)-[k:acted_in]->(f) WHERE n.name = \"Laurence Fishburne\" RETURN f.title"
+    },
+    {
+        "index": "88",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in|produced]->(movie:movie) RETURN movie.title"
+    },
+    {
+        "index": "89",
+        "answer": "MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie) RETURN movie.title, movie.release_year"
+    },
+    {
+        "index": "90",
+        "answer": "MATCH (n) WHERE n:person RETURN n.name LIMIT 3"
+    },
+    {
+        "index": "91",
+        "answer": "RETURN DISTINCT node.id"
+    },
+    {
+        "index": "92",
+        "answer": "MATCH (n)-[r]-(k:person {name: \"Laurence Fishburne\"}) RETURN type(r)"
+    },
+    {
+        "index": "93",
+        "answer": "MATCH (n) WHERE n.name = 'Laurence Fishburne' RETURN n.name, n.born, count(n) OPTIONAL MATCH (n)-[r:knows]-(neighbor) RETURN n.name, n.born, r, neighbor"
+    },
+    {
+        "index": "94",
+        "answer": "RETURN DISTINCT keys(node {name: $0}) LIMIT 1"
+    },
+    {
+        "index": "95",
+        "answer": "RETURN DISTINCT labels(node {name: $0}) LIMIT 1"
+    },
+    {
+        "index": "96",
+        "answer": "MATCH (n) WHERE n.name IN ['John', 'Mark', 'Jonathan', 'Bill'] AND n.name STARTS WITH 'Jo' RETURN n.name"
+    },
+    {
+        "index": "97",
+        "answer": "MATCH (n)-[e]-(m) WHERE all(x in [2, 4, 7, 9, 12] WHERE x = m) AND (m = 4 OR m > 6 AND m < 10) RETURN n,e,m"
+    },
+    {
+        "index": "98",
+        "answer": "MATCH (n) WHERE n.value IN [2, 3, 4, 5] AND int(n.value) IN [2, 3] RETURN n.value"
+    },
+    {
+        "index": "99",
+        "answer": "MATCH (n:list {name: 'numbers'})-[e]-(m:list {name: 'colors'}) RETURN n,e,m"
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (n:person {name: 'Laurence Fishburne'})-[:acted_in]->(m:movie) RETURN m, n<|end_header_id|> 错误原因：Syntax error at line 1, column 81: no viable alternative at input 'n<|'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (n)-[e]-(m) WHERE n.name= 'Carrie-Anne Moss' RETURN DISTINCT m,e<|end_header_id|> 错误原因：Syntax error at line 1, column 71: no viable alternative at input 'e<|'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (n {name: 'Keanu Reeves'}) RETURN n.name, n.born<|end_header_id|> 错误原因：Syntax error at line 1, column 55: no viable alternative at input 'n.born<|'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：RETURN -sum(n.birthYear) AS birthYearSum FROM person_born AS n 错误原因：Syntax error at line 1, column 41: no viable alternative at input ' FROM'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (n) WHERE id(n)= 4 WITH n MATCH (n)-[e] RETURN e.uid 错误原因：Syntax error at line 1, column 46: no viable alternative at input 'MATCH (n)-[e] RETURN'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (laurence {name: 'Laurence Fishburne'})-[:acted_in]->(movie) RETURN movie.title<|end_header_id|> 错误原因：Syntax error at line 1, column 86: no viable alternative at input 'movie.title<|'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    },
+    {
+        "instruction": "你是一个TuGraph翻译修改机器,根据以下输入问题(input),修改成正确的答案,你应该生成对应的Cypher查询语句(output)。请确保你输出的结果必须只包含正确的Cypher查询语句,不要包含任何推测、注释或多余的内容。你的任务是准确地将有语法错误的输入修改成没有语法错误的输出,确保查询语法完全正确,并且能够执行成功。不要进行任何额外的分析或解释,只输出最终的Cypher查询语句。",
+        "input": "原句：MATCH (n:person {name: 'Laurence Fishburne'})-[:acted_in*0..1]-(m:movie) RETURN m, n<|end_header_id|> 错误原因：Syntax error at line 1, column 85: no viable alternative at input 'n<|'",
+        "output": "",
+        "history": [],
+        "system": "你是一个图查询语言修改机器"
+    }
+]
